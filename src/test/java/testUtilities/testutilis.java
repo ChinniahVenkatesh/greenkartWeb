@@ -20,7 +20,7 @@ public class testutilis extends testBasic{
 		Logger4j().info("The Element is "+element);
 		testPass(element);
 		return driver.findElement(By.xpath(element));
-		
+			
 	}
 
 }

@@ -1,17 +1,26 @@
 package testBase;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Properties;
+
+import javax.swing.DesktopManager;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
@@ -80,14 +89,27 @@ public class testBasic {
 	
 	public static ExtentTest testPass(String txt)
 	{
-		test.log(Status.PASS,txt);
+		test.log(Status.PASS, txt, MediaEntityBuilder.createScreenCaptureFromBase64String(getScreenshot()).build());
+		//test.log(Status.PASS,MediaEntityBuilder.createScreenCaptureFromBase64String(getScreenshot()).build());
 		return test;
 	}
 	
-	public static void finish()
+	public static void finish() throws IOException, URISyntaxException
 	{
 		driver.quit();
 		reports.flush();
+		Desktop d = Desktop.getDesktop();
+		String path = System.getProperty("user.dir")+"\\index.html";
+		File file = new File(path);
+		//d.browse(new URI(path));
+		d.open(file);
+		
+	}
+	
+	public static  String getScreenshot()
+	{
+	  String file =  ((RemoteWebDriver) driver).getScreenshotAs(OutputType.BASE64);
+	  return file;
 	}
 	
 	

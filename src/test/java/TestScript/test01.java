@@ -1,7 +1,7 @@
 package TestScript;
 
 import java.io.IOException;
-
+import java.net.URISyntaxException;
 
 import org.openqa.selenium.WebDriver;
 
@@ -15,18 +15,14 @@ public class test01 extends testutilis{
 		// TODO Auto-generated constructor stub
 	}
 	static WebDriver driver;
-	public static void main(String [] args) throws IOException
+	public static void main(String [] args) throws IOException, URISyntaxException
 	{
 		driver = initBrowser();
 		testutilis testutilis  = new testutilis(driver);
 		testutilis.getElement("//input[@placeholder='Search for Vegetables and Fruits']").sendKeys("Tomato");
 		testPass("going to close the browser");
+		System.out.println("Testing");
 		finish();
-		
-		
-		
-		
-		
 	}
 	
 }

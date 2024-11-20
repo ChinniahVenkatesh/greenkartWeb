@@ -1,6 +1,7 @@
 package TestScript;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import org.openqa.selenium.WebDriver;
 
@@ -14,7 +15,7 @@ public class test02 extends testutilis{
 	}
 	
 	static WebDriver driver;
-	public static void main(String [] args) throws IOException
+	public static void main(String [] args) throws IOException, URISyntaxException
 	{
 		driver = initBrowser();
 		testutilis testutilis  = new testutilis(driver);
