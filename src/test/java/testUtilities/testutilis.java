@@ -17,10 +17,10 @@ public class testutilis extends testBasic{
 	}
 	public static WebElement getElement(String element)
 	{
-		Logger4j().info("The Element is "+element);
+
+		Logger4j().info(element);
 		testPass(element);
-		return driver.findElement(By.xpath(element));
-			
+		return driver.findElement(By.xpath(element));	
 	}
 
 }

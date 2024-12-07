@@ -1,0 +1,3 @@
+2024-12-07 10:03:22,299 INFO t.testBasic [main] The browser is chrome is invoked
+2024-12-07 10:03:22,302 ERROR t.testutilis [main] //button[@id='submitbtn']
+2024-12-07 10:03:22,773 ERROR t.testutilis [main] //button[@id='submitbtn']

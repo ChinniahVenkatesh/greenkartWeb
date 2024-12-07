@@ -22,7 +22,9 @@ public class test01 extends testutilis{
 		testutilis.getElement("//input[@placeholder='Search for Vegetables and Fruits']").sendKeys("Tomato");
 		testPass("going to close the browser");
 		System.out.println("Testing");
+		validation("ChinniahVenkatesh","ChinniahVenkatesh");
 		finish();
+		
 	}
 	
 }

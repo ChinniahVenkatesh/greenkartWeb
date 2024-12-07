@@ -1,0 +1,2 @@
+2024-11-21 17:43:59,074 INFO t.testBasic [main] The browser is chrome is invoked
+2024-11-21 17:43:59,077 INFO t.testutilis [main] The Element is //input[@placeholder='Search for Vegetables and Fruits']
